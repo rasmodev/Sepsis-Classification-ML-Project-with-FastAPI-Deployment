@@ -29,7 +29,7 @@ This repository houses a machine learning project focused on the early detection
 - Input patient data and receive sepsis risk predictions.
 
 # Contributing:
-We welcome contributions to improve the model's performance, add new features, or enhance the web application's usability. Please refer to our contribution guidelines in the repository to get started.
+Your contributions are welcome to improve the model's performance, add new features, or enhance the web application's usability. Please refer to our contribution guidelines in the repository to get started.
 
 # License:
 This project is licensed under the MIT License.
