@@ -4,7 +4,11 @@ import pickle
 import pandas as pd
 from typing import List
 
-app = FastAPI()
+app = FastAPI(
+    title="Sepsis Prediction API",
+    description="A FastAPI application for sepsis prediction using a machine learning model.",
+    version="1.0"
+)
 
 # Load the model and key components
 with open('model_and_key_components.pkl', 'rb') as file:
