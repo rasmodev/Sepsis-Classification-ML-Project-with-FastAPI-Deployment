@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Body
 from pydantic import BaseModel
-import joblib
+import pickle
 import pandas as pd
 from typing import List
 
@@ -8,7 +8,7 @@ app = FastAPI()
 
 # Load the model and key components
 with open('model_and_key_components.pkl', 'rb') as file:
-    loaded_components = joblib.load(file)
+    loaded_components = pickle.load(file)
 
 loaded_model = loaded_components['model']
 loaded_encoder = loaded_components['encoder']
