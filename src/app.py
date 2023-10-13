@@ -6,7 +6,7 @@ from typing import List
 
 app = FastAPI(
     title="Sepsis Prediction API",
-    description="A FastAPI application for sepsis prediction using a machine learning model.",
+    description="This FastAPI application provides sepsis predictions using a machine learning model.",
     version="1.0"
 )
 
@@ -52,8 +52,10 @@ def make_predictions(input_data_scaled_df: pd.DataFrame):
 
 @app.get("/")
 async def root():
-    # Endpoint at the root URL ("/") returns a welcome message
-    return {"message": "Welcome to your Sepsis Classification API!"}
+    # Endpoint at the root URL ("/") returns a welcome message with a clickable link
+    message = "Welcome to your Sepsis Classification API! Click [here](/docs) to access the API documentation."
+    return {"message": message}
+
 
 @app.post("/predict/", response_model=OutputData)
 async def predict_sepsis(input_data: InputData):
@@ -68,5 +70,5 @@ async def predict_sepsis(input_data: InputData):
 
 if __name__ == "__main__":
     import uvicorn
-    # Run the FastAPI application on host "0.0.0.0" and port 8000
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Run the FastAPI application on the local host and port 8000
+    uvicorn.run(app, host="127.0.0.1", port=8000)
