@@ -1,9 +1,9 @@
-from fastapi import FastAPI, HTTPException, Body
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pickle
 import pandas as pd
-from typing import List
 
+# Instantiate The Fast API instance
 app = FastAPI(
     title="Sepsis Prediction API",
     description="This FastAPI application provides sepsis predictions using a machine learning model.",
@@ -11,7 +11,7 @@ app = FastAPI(
 )
 
 # Load the model and key components
-with open('model_and_key_components.pkl', 'rb') as file:
+with open('/model_and_key_components.pkl', 'rb') as file:
     loaded_components = pickle.load(file)
 
 loaded_model = loaded_components['model']
