@@ -11,7 +11,7 @@ app = FastAPI(
 )
 
 # Load the model and key components
-with open('/model_and_key_components.pkl', 'rb') as file:
+with open('model_and_key_components.pkl', 'rb') as file:
     loaded_components = pickle.load(file)
 
 loaded_model = loaded_components['model']
