@@ -21,5 +21,3 @@ EXPOSE 8000
 
 # Define the command to run your FastAPI application
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
-
-
