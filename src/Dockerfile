@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy your FastAPI application code into the container
 COPY src/app.py /app
 
+# Copy the model and key components into the container
+COPY model_and_key_components.pkl /app
+
 # Copy the requirements.txt file into the container
 COPY requirements.txt /app
 
@@ -18,4 +21,5 @@ EXPOSE 8000
 
 # Define the command to run your FastAPI application
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
 
