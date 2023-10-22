@@ -1,5 +1,5 @@
 # Build the Docker container for the FastAPI application
-docker build -t sepsis_fastapi -f src/Dockerfile .
+docker build -t sepsis_fastapi -f Dockerfile .
 
 # List all Docker images
 docker images
