@@ -16,8 +16,8 @@ COPY ./requirements.txt /app
 # Install the Python dependencies
 RUN pip install -r /app/requirements.txt
 
-# Expose port 8000 for the FastAPI application
-EXPOSE 8000
+# Expose port 7860 for the FastAPI application
+EXPOSE 7860
 
 # Define the command to run your FastAPI application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860", "--reload"]
