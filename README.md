@@ -1,8 +1,11 @@
 # Sepsis-Classification-ML-Project-with-FAST-API-Integration
 This repository houses a machine learning project focused on the early detection and classification of sepsis, and integrating the model into a web application using FAST API.
 
-# Description:
-This repository houses a machine learning project focused on the early detection and classification of sepsis, a life-threatening medical condition. Sepsis is a critical concern in healthcare, and early diagnosis can significantly improve patient outcomes. In this project, we have developed a robust machine learning model for sepsis classification and integrated it into a web application using FAST API, making it accessible for real-time predictions.
+<p align="center">
+  <img src="profile_image.webp" width="800">
+</p>
+
+This project aims to provide a streamlined tool for healthcare professionals to predict sepsis cases quickly and effectively.
 
 # Project Overview:
 **i. Data Collection and Preprocessing:** We collected and preprocessed a comprehensive dataset containing clinical and physiological data from patients to train and evaluate our sepsis classification model.
