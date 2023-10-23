@@ -2,10 +2,15 @@
 This repository houses a machine learning project focused on the early detection and classification of sepsis, and integrating the model into a web application using FAST API.
 
 <p align="center">
-  <img src="profile_image.jpg" width="800">
+  <img src="screenshots/profile_image.jpg"  width="800">
 </p>
 
 This project aims to provide a streamlined tool for healthcare professionals to predict sepsis cases quickly and effectively.
+
+## Summary
+|     Jupyter Notebook                       | Published Article|    Link To Working App on Hugging Face
+| -------------                  | -------------    |    -----------------
+|[Notebook with code and full analysis](https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment/blob/main/dev/Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb)|  [Published Article on Medium](https://medium.com/@rasmowanyama/fastapi-for-machine-learning-deployment-a-beginners-guide-ee74ee41316f) |[Link to working FastAPI](https://rasmodev-sepsis-prediction.hf.space/docs/)
 
 # Project Overview:
 **i. Data Collection and Preprocessing:** We collected and preprocessed a comprehensive dataset containing clinical and physiological data from patients to train and evaluate our sepsis classification model.
