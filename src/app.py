@@ -70,5 +70,5 @@ async def predict_sepsis(input_data: InputData):
 
 if __name__ == "__main__":
     import uvicorn
-    # Run the FastAPI application on the local host and port 8000
-    CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "8000", "--reload"]
+    # Run the FastAPI application on the local host and port 7860
+    CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "7860", "--reload"]
