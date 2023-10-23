@@ -13,17 +13,10 @@ This project aims to provide a streamlined tool for healthcare professionals to 
 |[Notebook with code and full analysis](https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment/blob/main/dev/Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb)|  [Published Article on Medium](https://medium.com/@rasmowanyama/fastapi-for-machine-learning-deployment-a-beginners-guide-ee74ee41316f) |[Link to working FastAPI](https://rasmodev-sepsis-prediction.hf.space/docs/)
 
 # Repository Contents:
-- Machine Learning Model (Code and Weights)
-- FAST API Web Application Code
-- Data Preprocessing Scripts
-- Documentation
-- Example Usage
-- Dependencies and Installation Instructions
-
 - [Project Overview](#project-overview)
-- [How To Use](#how-to-use)
+- [Project Setup](#project-setup)
+- [Data Fields](#data-fields)
 - [Getting Started](#getting-started)
-- [Data](#data)
 - [Modeling](#modeling)
 - [Evaluation](#evaluation)
 - [Deployment](#deployment)
@@ -40,12 +33,52 @@ This project aims to provide a streamlined tool for healthcare professionals to 
 
 **iv. Usage and Deployment:** In this README file, you will find detailed instructions on how to use and deploy this web application, making it user-friendly for both developers and healthcare practitioners.
 
-# How to Use:
-- Clone this repository to your local machine.
-- Install the required dependencies.
-- Run the FAST API application.
-- Access the web application through a web browser.
-- Input patient data and receive sepsis risk predictions.
+# Project Setup:
+To set up the project environment, follow these steps:
+
+i. Clone the repository:
+
+git clone my_github 
+
+```bash 
+https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment.git
+```
+
+ii. Create a virtual environment and install the required dependencies:
+
+- **Windows:**
+  ```bash
+  python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt
+  ```
+
+- **Linux & MacOS:**
+  ```bash
+  python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
+  ```
+You can copy each command above and run them in your terminal to easily set up the project environment.
+
+## Data Fields
+
+| Column Name | Data Features | Description                                      |
+|-------------|-----------------|--------------------------------------------------|
+| ID          | N/A             | Unique identifier for each patient               |
+| PRG         | Attribute 1     | Number of pregnancies (applicable only to females) |
+| PL          | Attribute 2     | Plasma glucose concentration (mg/dL)             |
+| PR          | Attribute 3     | Diastolic blood pressure (mm Hg)                 |
+| SK          | Attribute 4     | Triceps skinfold thickness (mm)                  |
+| TS          | Attribute 5     | 2-hour serum insulin (mu U/ml)                   |
+| M11         | Attribute 6     | Body mass index (BMI) (weight in kg / (height in m)^2) |
+| BD2         | Attribute 7     | Diabetes pedigree function (mu U/ml)             |
+| Age         | Attribute 8     | Age of the patient (years)                       |
+| Insurance   | N/A             | Whether the patient has insurance coverage (1 for Yes, 0 for No) |
+| Sepsis      | Target          | Positive: if a patient in ICU will develop sepsis,<br> Negative: otherwise |
+
+"ID" and "Insurance" are marked as "N/A" because they do not contribute to predicting whether a patient in the ICU will develop sepsis. These columns were excluded during feature selection because they do not provide relevant information for the sepsis prediction model.
+
+
+
+
+
 
 # Contributing:
 Your contributions are welcome to improve the model's performance, add new features, or enhance the web application's usability. Please refer to our contribution guidelines in the repository to get started.
