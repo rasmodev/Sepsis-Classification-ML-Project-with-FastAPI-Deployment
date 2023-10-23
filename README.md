@@ -58,6 +58,7 @@ ii. Create a virtual environment and install the required dependencies:
 You can copy each command above and run them in your terminal to easily set up the project environment.
 
 ## Data Fields
+The data used in this project consists of a diverse collection of sepsis cases obtained from [Sepsis](https://www.kaggle.com/datasets/chaunguynnghunh/sepsis?select=README.md).
 
 | Column Name | Data Features | Description                                      |
 |-------------|-----------------|--------------------------------------------------|
@@ -73,10 +74,51 @@ You can copy each command above and run them in your terminal to easily set up t
 | Insurance   | N/A             | Whether the patient has insurance coverage (1 for Yes, 0 for No) |
 | Sepsis      | Target          | Positive: if a patient in ICU will develop sepsis,<br> Negative: otherwise |
 
-"ID" and "Insurance" are marked as "N/A" because they do not contribute to predicting whether a patient in the ICU will develop sepsis. These columns were excluded during feature selection because they do not provide relevant information for the sepsis prediction model.
+"ID" and "Insurance" are marked as "N/A" because they do not contribute to predicting whether a patient in the ICU will develop sepsis. These columns were excluded during feature selection because they did not provide relevant information for the sepsis prediction model.
 
 
+# Machine Learning Lifecycle
+I employed the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology in this project. 
+<p align="center">
+  <img src="screenshots/CRISP-DM.png">
+</p>
 
+Here are the steps I undertook:
+
+Business Understanding:
+
+I began by understanding the problem domain, which involved predicting sepsis in ICU patients.
+I defined the project goals and objectives, such as early sepsis detection, which can save lives.
+Data Understanding:
+
+I collected the dataset from Kaggle, which included various patient attributes and sepsis labels.
+I examined the dataset to get insights into its structure and quality.
+Data Preparation:
+
+I preprocessed the data by handling missing values and performing data cleaning.
+I encoded categorical variables as needed for modeling.
+I conducted feature engineering to select relevant features and prepare them for modeling.
+Modeling:
+
+I chose an appropriate machine learning algorithm for binary classification.
+I split the data into training and testing sets.
+I trained the model using the training data and tuned hyperparameters for optimal performance.
+I assessed model performance using evaluation metrics such as accuracy, precision, recall, and F1-score.
+Evaluation:
+
+I evaluated the model's performance on the testing dataset to ensure its generalizability.
+I used various evaluation metrics to assess how well the model predicted sepsis cases.
+Deployment:
+
+I deployed the model as a FastAPI web service, creating an API for sepsis prediction.
+I provided an easy-to-use interface for users to input patient data and receive predictions.
+Feedback (Optional):
+
+In real-world applications, this step involves collecting feedback from users and monitoring the model's performance.
+Documentation:
+
+I documented the entire project, including data sources, preprocessing steps, modeling techniques, and API usage, to facilitate future reference and collaboration.
+By following the CRISP-DM methodology, I systematically addressed the sepsis prediction problem, from understanding the business context to deploying a machine learning model as a practical tool for early sepsis detection in clinical settings.
 
 
 
