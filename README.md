@@ -220,7 +220,7 @@ vii. Support Vector Machine
 The model performance was as follows:
 
 <p align="center">
-  <img src=screenshots/f1_score.png alt="f1_score" width="600">
+  <img src=screenshots/f1_score_leaderboard.png alt="f1_score" width="600">
 </p>
 
 Based on the f1 score, the Gradient Boosting Classifier was the best performing model.
