@@ -13,7 +13,7 @@ This project aims to provide a streamlined tool for healthcare professionals to 
 |[Notebook with code and full analysis](https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment/blob/main/dev/Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb)|  [Published Article on Medium](https://medium.com/@rasmowanyama/fastapi-for-machine-learning-deployment-a-beginners-guide-ee74ee41316f) |[Link to working FastAPI](https://rasmodev-sepsis-prediction.hf.space/docs/)
 
 ## FastAPI Interface
-Click on "Try Now", add the patient's medical details and click on the **EXECUTE** button.
+Click on "Try It Out", add the patient's medical details, and click on the **EXECUTE** button.
 
 ![App Screenshot](screenshots/FastAPI_before_pred.png)
 
