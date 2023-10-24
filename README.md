@@ -23,8 +23,7 @@ This project aims to provide a streamlined tool for healthcare professionals to 
 - [Modeling](#modeling)
 - [Evaluation](#evaluation)
 - [Deployment](#deployment)
-- [Future Work](#future-work)
-- [Contact](#contact)
+- [Author](#author)
 
 
 # Project Overview:
@@ -196,15 +195,12 @@ By following the CRISP-DM methodology, I systematically addressed the sepsis pre
 
 # Author
 
-`Rasmo Wanyama Abubakari`
+`Rasmo Wanyama`
 
 `Data Analyst/Data Scientist`
-`Azubi Africa`
 
-- [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rasmo-/) 
+Let's connect on LinkedIn [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rasmo-/) 
 
-# License:
-This project is licensed under the MIT License.
 
 # Acknowledgments:
 We would like to thank the open-source community and the healthcare professionals who contributed to the dataset used in this project. Their efforts have made advancements in sepsis detection possible.
