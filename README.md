@@ -17,6 +17,9 @@ This project aims to provide a streamlined tool for healthcare professionals to 
 - [Project Setup](#project-setup)
 - [Data Fields](#data-fields)
 - [Getting Started](#getting-started)
+- [Business Understanding](#business-understanding)
+- [Data Understanding](#data-understanding)
+- [Data Preparation](#data-preparation)
 - [Modeling](#modeling)
 - [Evaluation](#evaluation)
 - [Deployment](#deployment)
@@ -68,7 +71,7 @@ The data used in this project consists of a diverse collection of sepsis cases o
 | PR          | Attribute 3     | Diastolic blood pressure (mm Hg)                 |
 | SK          | Attribute 4     | Triceps skinfold thickness (mm)                  |
 | TS          | Attribute 5     | 2-hour serum insulin (mu U/ml)                   |
-| M11         | Attribute 6     | Body mass index (BMI) (weight in kg / (height in m)^2) |
+| M11         | Attribute 6     | Body mass index (BMI) (weight in kg / {(height in m)}^2) |
 | BD2         | Attribute 7     | Diabetes pedigree function (mu U/ml)             |
 | Age         | Attribute 8     | Age of the patient (years)                       |
 | Insurance   | N/A             | Whether the patient has insurance coverage (1 for Yes, 0 for No) |
@@ -81,7 +84,7 @@ The data used in this project consists of a diverse collection of sepsis cases o
 I employed the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology in this project. 
 
 <p align="center">
-  <img src="screenshots/CRISP-DM.png" width="400">
+  <img src="screenshots/CRISP-DM.png" width="500">
 </p>
 
 Here are the steps I undertook:
@@ -92,9 +95,66 @@ I began by understanding the problem domain, which involved predicting sepsis in
 I defined the project goals and objectives, such as early sepsis detection, which can save lives.
 
 ## Data Understanding:
+I collected the test and train datasets from Kaggle, which included various patient attributes. The train dataset had, sepsis, the target variable, while the test dataset did not have the target variable since this dataset is what I later used to predict sepsis. 
 
-I collected the test and train datasets from Kaggle, which included various patient attributes. The train dataset had, sepsis, the target variable, while the test did not have the target variable since this dataset is what I later used to predict sepsis.
-I conducted an extensive Exploratory Data Analysis (EDA) to get insights into the structure and quality of the dataset.
+After an overview of the first few columns, I formulated the hypothesis and key analytical questions that would guide the understanding of the datasets.
+
+**Hypothesis:** 
+Null Hypothesis (H0): There is no significant association between the patient's age and the likelihood of sepsis.
+
+Alternative Hypothesis (H1): There is a significant association between the patient's age and the likelihood of sepsis.
+
+**Key Analytical Questions:** 
+i. Are there any correlations or patterns between the numerical features (e.g., PRG, PL, PR, SK, TS, M11, BD2, Age) and the presence of sepsis (Positive/Negative)?
+
+ii. How does the distribution of key numerical variables (e.g., PR, SK, TS, M11) differ between patients with and without sepsis?
+
+iii. Is there a relationship between the number of pregnancies (PRG) and plasma glucose concentration (PL)? Does this relationship vary with the presence of sepsis?
+
+iv. Are there any significant differences in diastolic blood pressure (PR) between patients with different triceps skinfold thickness (SK) levels?
+
+v. Does the body mass index (M11) vary significantly with 2-hour serum insulin (TS) levels?
+
+vi. Is there a correlation between the diabetes pedigree function (BD2) and age? How does this correlation affect the likelihood of sepsis?
+
+vii. Are patients with insurance coverage more likely to have certain health characteristics (e.g., higher age, higher BMI) compared to those without insurance coverage?
+
+
+### Understanding the datasets
+I conducted an in-depth exploration of the datasets to gain insights into the available variables,their distributions and relationships, including:
+
+i. Column Information of The Datasets using the .info method.
+ii. Shape of The Datasets
+iii. Summary Statistics Datasets
+iv. Checking for Missing Values in The Datasets
+v. Checking for Duplicates in The Datasets
+
+These steps provided an initial undertanding of the datasets to identify any data quality issues that informed the cleaning and pre-processing steps.
+
+I then conducted an extensive Exploratory Data Analysis (EDA) to get insights into the structure and quality of the dataset.
+
+### Exploratory Data Analysis (EDA)
+During the EDA phase, a comprehensive investigation of the sepsis dataset was conducted to gain insights through various types of analyses.
+
+i. **Univariate analysis:** I performed a thorough individual examination of each variable looking at aspects such as summary statistics (mean, median, standard deviation, and quartiles) using the .describe method to understand the central tendency and spread of the data.
+
+<p align="center">
+  <img src="screenshots/univariate.png" alt="Univariate" width="600">
+</p>
+
+ii. **Bivariate analysis:** Relationships between pairs of variables were explored to identify patterns and potential predictor variables for sepsis classification.
+
+<p align="center">
+  <img src="screenshots/bivariate.png" width="600">
+</p>
+
+iii. **Multivariate analysis:** Relationships among multiple variables were examined simultaneously, allowing for a deeper understanding of their interactions and impact on sepsis.
+
+<p align="center">
+  <img src=screenshots/multivariate.png alt="multivariate" width="600">
+</p>
+
+In addition to these exploratory analyses, hypotheses were formulated based on prior knowledge and existing research. Statistical tests such as t-tests, chi-square tests, or ANOVA tests were utilized to test these hypotheses, depending on the nature of the variables. The results of these tests validated or refuted the formulated hypotheses and provided further insights into the relationships between variables.
 
 ## Data Preparation:
 
@@ -108,11 +168,15 @@ I chose an appropriate machine learning algorithm for binary classification.
 I split the data into training and testing sets.
 I trained the model using the training data and tuned hyperparameters for optimal performance.
 I assessed model performance using evaluation metrics such as accuracy, precision, recall, and F1-score.
-Evaluation:
+
+
+## Evaluation:
 
 I evaluated the model's performance on the testing dataset to ensure its generalizability.
 I used various evaluation metrics to assess how well the model predicted sepsis cases.
-Deployment:
+
+
+## Deployment:
 
 I deployed the model as a FastAPI web service, creating an API for sepsis prediction.
 I provided an easy-to-use interface for users to input patient data and receive predictions.
