@@ -74,7 +74,7 @@ The data used in this project consists of a diverse collection of sepsis cases o
 | BD2         | Attribute 7     | Diabetes pedigree function (mu U/ml)             |
 | Age         | Attribute 8     | Age of the patient (years)                       |
 | Insurance   | N/A             | Whether the patient has insurance coverage (1 for Yes, 0 for No) |
-| Sepsis      | Target          | Positive: if a patient in ICU will develop sepsis,<br> Negative: otherwise |
+| Sepsis      | Target          | Target variable - Positive: if a patient in ICU will develop sepsis,<br> Negative: otherwise |
 
 "ID" and "Insurance" are marked as "N/A" because they do not contribute to predicting whether a patient in the ICU will develop sepsis. These columns were excluded during feature selection because they did not provide relevant information for the sepsis prediction model.
 
@@ -157,21 +157,54 @@ iii. **Multivariate analysis:** Relationships among multiple variables were exam
   <img src=screenshots/multivariate.png alt="multivariate" width="600">
 </p>
 
-In addition to these exploratory analyses, hypotheses were formulated based on prior knowledge and existing research. Statistical tests such as t-tests, chi-square tests, or ANOVA tests were utilized to test these hypotheses, depending on the nature of the variables. The results of these tests validated or refuted the formulated hypotheses and provided further insights into the relationships between variables.
+In addition to these exploratory analyses, I tested my hypothesis and answered key analytical questions.
 
 ## Data Preparation:
+- I preprocessed the data by performing data cleaning by:
 
-I preprocessed the data by handling missing values and performing data cleaning.
-I encoded categorical variables as needed for modeling.
-I conducted feature engineering to select relevant features and prepare them for modeling.
+ i. imputing zero values that did not make sense in some of the columns with the mean value of each age group.
+ ii. Dropping unnecessary columns 
+
+- I encoded the target variable (Sepsis), the only categorical variable needed for modeling, using Label Encoding.
+- I then conducted feature engineering to select relevant features and prepare them for modeling.
+
 
 ## Modeling:
 
-I chose an appropriate machine learning algorithm for binary classification.
-I split the data into training and testing sets.
-I trained the model using the training data and tuned hyperparameters for optimal performance.
-I assessed model performance using evaluation metrics such as accuracy, precision, recall, and F1-score.
+- I split the train dataset into training (80%) and evaluation (20%) sets.
+- To properly train and evaluate the models, I took into consideration the imbalanced nature of the traget variables/ class in the training set. 
 
+![Class imbalance in the Train Set](screenshots/imb_class.png)
+
+- I used random oversampling to balance the target class. Addressing this class imbalance is important to ensure that the machine learning model can make accurate predictions for both classes and is not biased towards the majority class.
+
+![Class Distribution After Balancing](screenshots/bal_class.png)
+
+- I also scaled the training and evaluation sets to ensure they were within the same range.
+
+- In this project, I compared 7 different classification algorithms:
+
+i. Logistic Regression
+
+ii. Random Forest Classifier
+
+iii. K-Nearest Neighbors Classifier
+
+iv. Decision Tree Classifier
+
+v. Gradient Boosting Classifier
+
+vi. Gaussian Naive Bayes
+
+vii. Support Vector Machine
+
+- I assessed model performance using evaluation metrics such as accuracy, precision, recall, and F1-score (the harmonic mean of precision and recall which provides a balanced measure of the model's performance).
+
+The model performance was as follows:
+
+![Alt text](screenshots/f1_score.png)
+
+Based on the f1 score, the Gradient Boosting Classifier was the best performing model.
 
 ## Evaluation:
 
@@ -183,15 +216,9 @@ I used various evaluation metrics to assess how well the model predicted sepsis 
 
 I deployed the model as a FastAPI web service, creating an API for sepsis prediction.
 I provided an easy-to-use interface for users to input patient data and receive predictions.
-Feedback (Optional):
 
-In real-world applications, this step involves collecting feedback from users and monitoring the model's performance.
-Documentation:
 
-I documented the entire project, including data sources, preprocessing steps, modeling techniques, and API usage, to facilitate future reference and collaboration.
 By following the CRISP-DM methodology, I systematically addressed the sepsis prediction problem, from understanding the business context to deploying a machine learning model as a practical tool for early sepsis detection in clinical settings.
-
-
 
 # Author
 
@@ -199,7 +226,9 @@ By following the CRISP-DM methodology, I systematically addressed the sepsis pre
 
 `Data Analyst/Data Scientist`
 
-Let's connect on LinkedIn [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rasmo-/) 
+Let's connect on LinkedIn:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rasmo-/) 
 
 
 # Acknowledgments:
