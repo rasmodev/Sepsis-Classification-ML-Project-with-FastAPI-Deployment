@@ -81,7 +81,7 @@ The data used in this project consists of a diverse collection of sepsis cases o
 I employed the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology in this project. 
 
 <p align="center">
-  <img src="screenshots/CRISP-DM.png">
+  <img src="screenshots/CRISP-DM.png" width="400">
 </p>
 
 Here are the steps I undertook:
@@ -90,16 +90,19 @@ Here are the steps I undertook:
 
 I began by understanding the problem domain, which involved predicting sepsis in ICU patients.
 I defined the project goals and objectives, such as early sepsis detection, which can save lives.
-Data Understanding:
 
-I collected the dataset from Kaggle, which included various patient attributes and sepsis labels.
-I examined the dataset to get insights into its structure and quality.
-Data Preparation:
+## Data Understanding:
+
+I collected the test and train datasets from Kaggle, which included various patient attributes. The train dataset had, sepsis, the target variable, while the test did not have the target variable since this dataset is what I later used to predict sepsis.
+I conducted an extensive Exploratory Data Analysis (EDA) to get insights into the structure and quality of the dataset.
+
+## Data Preparation:
 
 I preprocessed the data by handling missing values and performing data cleaning.
 I encoded categorical variables as needed for modeling.
 I conducted feature engineering to select relevant features and prepare them for modeling.
-Modeling:
+
+## Modeling:
 
 I chose an appropriate machine learning algorithm for binary classification.
 I split the data into training and testing sets.
