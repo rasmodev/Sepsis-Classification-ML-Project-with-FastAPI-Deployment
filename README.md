@@ -124,9 +124,13 @@ vii. Are patients with insurance coverage more likely to have certain health cha
 I conducted an in-depth exploration of the datasets to gain insights into the available variables,their distributions and relationships, including:
 
 i. Column Information of The Datasets using the .info method.
+
 ii. Shape of The Datasets
+
 iii. Summary Statistics Datasets
+
 iv. Checking for Missing Values in The Datasets
+
 v. Checking for Duplicates in The Datasets
 
 These steps provided an initial undertanding of the datasets to identify any data quality issues that informed the cleaning and pre-processing steps.
@@ -190,8 +194,14 @@ By following the CRISP-DM methodology, I systematically addressed the sepsis pre
 
 
 
-# Contributing:
-Your contributions are welcome to improve the model's performance, add new features, or enhance the web application's usability. Please refer to our contribution guidelines in the repository to get started.
+# Author
+
+`Rasmo Wanyama Abubakari`
+
+`Data Analyst/Data Scientist`
+`Azubi Africa`
+
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rasmo-/) 
 
 # License:
 This project is licensed under the MIT License.
