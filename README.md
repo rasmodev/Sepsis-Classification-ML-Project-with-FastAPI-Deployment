@@ -13,7 +13,7 @@ This project aims to provide a streamlined tool for healthcare professionals to 
 |[Notebook with code and full analysis](https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment/blob/main/dev/Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb)|  [Published Article on Medium](https://medium.com/@rasmowanyama/fastapi-for-machine-learning-deployment-a-beginners-guide-ee74ee41316f) |[Link to working FastAPI](https://rasmodev-sepsis-prediction.hf.space/docs/)
 
 ## FastAPI Interface
-Click on "Try It Out", add the patient's medical details, and click on the **EXECUTE** button.
+After clicking on the link to the working FastAPI, click on "Try It Out", add the patient's medical details, and click on the **"EXECUTE"** button.
 
 ![App Screenshot](screenshots/FastAPI_before_pred.png)
 
@@ -188,13 +188,13 @@ In addition to these exploratory analyses, I tested my hypothesis and answered k
 - To properly train and evaluate the models, I took into consideration the imbalanced nature of the traget variables/ class in the training set. 
 
 <p align="center">
-  <img src=screenshots/imb_class.png alt="class_imbalance" width="600">
+  <img src=screenshots/imb_class.png alt="class_imbalance" width="500">
 </p>
 
 - I used random oversampling to balance the target class. Addressing this class imbalance is important to ensure that the machine learning model can make accurate predictions for both classes and is not biased towards the majority class.
 
 <p align="center">
-  <img src=screenshots/bal_class.png alt="balanced_class" width="600">
+  <img src=screenshots/bal_class.png alt="balanced_class" width="500">
 </p>
 
 - I also scaled the training and evaluation sets to ensure they were within the same range.
@@ -220,7 +220,7 @@ vii. Support Vector Machine
 The model performance was as follows:
 
 <p align="center">
-  <img src=screenshots/f1_score_leaderboard.png alt="f1_score" width="600">
+  <img src=screenshots/f1_score_leaderboard.png alt="f1_score" width="500">
 </p>
 
 Based on the f1 score, the Gradient Boosting Classifier was the best performing model.
@@ -232,12 +232,17 @@ I used various evaluation metrics to assess how well the model predicted sepsis 
 
 
 ## Deployment:
+**i. FastAPI**. 
+The model is deployed as a FastAPI web service, which provides an API for sepsis prediction. This deployment offers an intuitive interface for users to input patient data and obtain predictions.
 
-I deployed the model as a FastAPI web service, creating an API for sepsis prediction.
-I provided an easy-to-use interface for users to input patient data and receive predictions.
+**ii. Docker Containerization**
+The application is containerized using Docker, making it easy to package and run in various environments with consistent behavior.
 
+**iii. Hugging Face Deployment**
+The application is containerized using Docker, making it easy to package and run in various environments with consistent behavior.
 
-By following the CRISP-DM methodology, I systematically addressed the sepsis prediction problem, from understanding the business context to deploying a machine learning model as a practical tool for early sepsis detection in clinical settings.
+# Conclusion
+Following the CRISP-DM methodology, I systematically addressed the sepsis prediction problem, from understanding the business context to deploying a machine learning model as a practical tool for early sepsis detection in clinical settings.
 
 # Author
 
