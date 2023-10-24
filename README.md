@@ -135,15 +135,15 @@ Alternative Hypothesis (H1): There is a significant association between the pati
 ### Understanding the datasets
 I conducted an in-depth exploration of the datasets to gain insights into the available variables,their distributions and relationships, including:
 
-i. Column Information of The Datasets using the .info method.
+- i. Column Information of The Datasets using the .info method.
 
-ii. Shape of The Datasets
+- ii. Shape of The Datasets
 
-iii. Summary Statistics Datasets
+- iii. Summary Statistics Datasets
 
-iv. Checking for Missing Values in The Datasets
+- iv. Checking for Missing Values in The Datasets
 
-v. Checking for Duplicates in The Datasets
+- v. Checking for Duplicates in The Datasets
 
 These steps provided an initial undertanding of the datasets to identify any data quality issues that informed the cleaning and pre-processing steps.
 
