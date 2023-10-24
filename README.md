@@ -174,11 +174,15 @@ In addition to these exploratory analyses, I tested my hypothesis and answered k
 - I split the train dataset into training (80%) and evaluation (20%) sets.
 - To properly train and evaluate the models, I took into consideration the imbalanced nature of the traget variables/ class in the training set. 
 
-![Class imbalance in the Train Set](screenshots/imb_class.png)
+<p align="center">
+  <img src=screenshots/imb_class.png alt="class_imbalance" width="600">
+</p>
 
 - I used random oversampling to balance the target class. Addressing this class imbalance is important to ensure that the machine learning model can make accurate predictions for both classes and is not biased towards the majority class.
 
-![Class Distribution After Balancing](screenshots/bal_class.png)
+<p align="center">
+  <img src=screenshots/bal_class.png alt="balanced_class" width="600">
+</p>
 
 - I also scaled the training and evaluation sets to ensure they were within the same range.
 
@@ -202,7 +206,9 @@ vii. Support Vector Machine
 
 The model performance was as follows:
 
-![Alt text](screenshots/f1_score.png)
+<p align="center">
+  <img src=screenshots/f1_score.png alt="f1_score" width="600">
+</p>
 
 Based on the f1 score, the Gradient Boosting Classifier was the best performing model.
 
