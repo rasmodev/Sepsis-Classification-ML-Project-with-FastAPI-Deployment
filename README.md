@@ -8,9 +8,9 @@ This repository houses a machine learning project focused on the early detection
 This project aims to provide a streamlined tool for healthcare professionals to predict sepsis cases quickly and effectively.
 
 ## Summary
-|     Jupyter Notebook                       |     Power BI Dashboard|     Published Article|    Deployed App on Hugging Face   
-| -------------                  | -------------    | -------------    |    -----------------
-|[Notebook with code and full analysis](https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment/blob/main/dev/Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb)|  [Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYWI1NTRiNTgtMzc5Yi00MjUzLTk4YzAtYjFlZTk3ZWUwMjEyIiwidCI6IjQ0ODdiNTJmLWYxMTgtNDgzMC1iNDlkLTNjMjk4Y2I3MTA3NSJ9) |  [Published Article on Medium](https://medium.com/@rasmowanyama/fastapi-for-machine-learning-deployment-a-beginners-guide-ee74ee41316f) |[Link to working FastAPI](https://rasmodev-sepsis-prediction.hf.space/docs/)
+|     Jupyter Notebook                       |     Power BI Dashboard|     Published Article|    Deployed FastAPI|    Deployed Streamlit App on Hugging Face    
+| -------------                  | -------------    | -------------    |    -----------------    |    -----------------
+|[Notebook with code and full analysis](https://github.com/rasmodev/Sepsis-Classification-ML-Project-with-FastAPI-Deployment/blob/main/dev/Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb)|  [Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYWI1NTRiNTgtMzc5Yi00MjUzLTk4YzAtYjFlZTk3ZWUwMjEyIiwidCI6IjQ0ODdiNTJmLWYxMTgtNDgzMC1iNDlkLTNjMjk4Y2I3MTA3NSJ9) |  [Published Article on Medium](https://medium.com/@rasmowanyama/fastapi-for-machine-learning-deployment-a-beginners-guide-ee74ee41316f) |[Link to FastAPI](https://rasmodev-sepsis-prediction.hf.space/docs/) |[Link to Streamlit App](https://rasmodev-sepsis-prediction-app-streamlit.hf.space/)
 
 ## FastAPI Interface
 After clicking on the link to the working FastAPI, click on "Try It Out", add the patient's medical details, and click on the **"EXECUTE"** button.
