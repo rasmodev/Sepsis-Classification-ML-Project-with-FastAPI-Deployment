@@ -1,13 +1,19 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+import streamlit as st
 import pickle
 import pandas as pd
+import numpy as np
 
-# Instantiate The Fast API instance
-app = FastAPI(
-    title="Sepsis Prediction API",
-    description="This FastAPI application provides sepsis predictions using a machine learning model.",
-    version="1.0"
+# About Section with Style
+st.sidebar.title("ℹ️ About")
+st.sidebar.info(
+    "This app predicts sepsis based on medical input data. "
+    "It uses a machine learning model trained on a dataset of sepsis cases."
+)
+
+# Welcome Message with Style
+st.write(
+    "👋 Welcome to the Sepsis Prediction App! Enter the medical data in the sidebar, "
+    "click 'Predict Sepsis', and get the prediction result."
 )
 
 # Load the model and key components
@@ -18,57 +24,50 @@ loaded_model = loaded_components['model']
 loaded_encoder = loaded_components['encoder']
 loaded_scaler = loaded_components['scaler']
 
-# Define the input data structure using Pydantic BaseModel
-class InputData(BaseModel):
-    PRG: int
-    PL: float
-    PR: float
-    SK: float
-    TS: int
-    M11: float
-    BD2: float
-    Age: int
+# Data Fields
+data_fields = {
+    "PRG": "Number of pregnancies (applicable only to females)",
+    "PL": "Plasma glucose concentration (mg/dL)",
+    "PR": "Diastolic blood pressure (mm Hg)",
+    "SK": "Triceps skinfold thickness (mm)",
+    "TS": "2-hour serum insulin (mu U/ml)",
+    "M11": "Body mass index (BMI) (weight in kg / {(height in m)}^2)",
+    "BD2": "Diabetes pedigree function (mu U/ml)",
+    "Age": "Age of the patient (years)"
+}
 
-# Define the output data structure using Pydantic BaseModel
-class OutputData(BaseModel):
-    Sepsis: str
+# Page Title with Style
+st.title("🩸 Sepsis Prediction App")
+st.markdown("---")
 
-# Define a function to preprocess input data
-def preprocess_input_data(input_data: InputData):
-    # Encode Categorical Variables (if needed)
-    # All columns are numerical. No need for encoding
+# Sidebar with Data Fields
+st.sidebar.title("📊 Input Data")
+input_data = {}
+for field, description in data_fields.items():
+    input_data[field] = st.sidebar.number_input(description, value=0.0)
 
-    # Apply scaling to numerical data
+# Function to preprocess input data
+def preprocess_input_data(input_data):
     numerical_cols = ['PRG', 'PL', 'PR', 'SK', 'TS', 'M11', 'BD2', 'Age']
-    input_data_scaled = loaded_scaler.transform([list(input_data.dict().values())])
-
+    input_data_scaled = loaded_scaler.transform([list(input_data.values())])
     return pd.DataFrame(input_data_scaled, columns=numerical_cols)
 
-# Define a function to make predictions
-def make_predictions(input_data_scaled_df: pd.DataFrame):
+# Function to make predictions
+def make_predictions(input_data_scaled_df):
     y_pred = loaded_model.predict(input_data_scaled_df)
     sepsis_mapping = {0: 'Negative', 1: 'Positive'}
     return sepsis_mapping[y_pred[0]]
 
-@app.get("/")
-async def root():
-    # Endpoint at the root URL ("/") returns a welcome message with a clickable link
-    message = "Welcome to your Sepsis Classification API! Click [here](/docs) to access the API documentation."
-    return {"message": message}
-
-
-@app.post("/predict/", response_model=OutputData)
-async def predict_sepsis(input_data: InputData):
+# Predict Button with Style
+if st.sidebar.button("🔮 Predict Sepsis"):
     try:
         input_data_scaled_df = preprocess_input_data(input_data)
         sepsis_status = make_predictions(input_data_scaled_df)
-        return {"Sepsis": sepsis_status}
+        st.success(f"The predicted sepsis status is: {sepsis_status}")
     except Exception as e:
+        st.error(f"An error occurred: {e}")
 
-        # Handle exceptions and return an error response
-        raise HTTPException(status_code=500, detail=str(e))
-
-if __name__ == "__main__":
-    import uvicorn
-    # Run the FastAPI application on the local host and port 7860
-    CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "7860", "--reload"]
+# Display Data Fields and Descriptions
+st.sidebar.title("🔍 Data Fields")
+for field, description in data_fields.items():
+    st.sidebar.text(f"{field}: {description}")
