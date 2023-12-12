@@ -53,8 +53,8 @@ def make_predictions(input_data_scaled_df: pd.DataFrame):
 @app.get("/")
 async def root():
     # Endpoint at the root URL ("/") returns a welcome message with a clickable link
-    message = "Welcome to your Sepsis Classification API! Click [here](/docs) to access the API documentation."
-    return {"message": message}
+    message = "Welcome to the Sepsis Classification API! This API Provides predictions for Sepsis based on several medical inputs. To use this API, please access the API documentation here: https://rasmodev-sepsis-prediction.hf.space/docs/"
+    return message
 
 
 @app.post("/predict/", response_model=OutputData)
@@ -71,4 +71,4 @@ async def predict_sepsis(input_data: InputData):
 if __name__ == "__main__":
     import uvicorn
     # Run the FastAPI application on the local host and port 7860
-    CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "7860", "--reload"]
+    CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860", "--reload"]
