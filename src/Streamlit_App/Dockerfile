@@ -5,7 +5,7 @@ FROM python:3.11.3-slim
 WORKDIR /app
 
 # Copy the requirements.txt file into the container
-COPY ./requirements.txt /app/requirements.txt
+COPY ./src/Streamlit_App/requirements.txt /app/requirements.txt
 
 # Install the Python dependencies
 RUN pip install -r /app/requirements.txt
