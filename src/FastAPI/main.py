@@ -1,7 +1,8 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import pickle
 import pandas as pd
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import uvicorn
 
 # Instantiate The Fast API instance
 app = FastAPI(
@@ -69,6 +70,5 @@ async def predict_sepsis(input_data: InputData):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    import uvicorn
     # Run the FastAPI application on the local host and port 7860
     CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860", "--reload"]
