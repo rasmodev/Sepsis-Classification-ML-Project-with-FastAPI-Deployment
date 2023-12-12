@@ -11,7 +11,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
 # Copy your FastAPI application code into the container
-COPY ./src/main.py /app/main.py
+COPY ./src/FastAPI/main.py /app/main.py
 
 # Copy the model and key components into the container
 COPY ./model_and_key_components.pkl /app/model_and_key_components.pkl
@@ -20,4 +20,4 @@ COPY ./model_and_key_components.pkl /app/model_and_key_components.pkl
 EXPOSE 7860
 
 # Define the command to run your FastAPI application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
