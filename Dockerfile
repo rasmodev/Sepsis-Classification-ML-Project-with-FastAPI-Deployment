@@ -5,13 +5,13 @@ FROM python:3.11.3-slim
 WORKDIR /app
 
 # Copy your FastAPI application code into the container
-COPY ./src/app.py /app
+COPY ./src/main.py /app
 
 # Copy the model and key components into the container
 COPY ./model_and_key_components.pkl /app
 
 # Copy the requirements.txt file into the container
-COPY ./requirements.txt /app
+COPY ./requirements.txt /app/requirements.txt
 
 # Install the Python dependencies
 RUN pip install -r /app/requirements.txt
@@ -20,4 +20,5 @@ RUN pip install -r /app/requirements.txt
 EXPOSE 7860
 
 # Define the command to run your FastAPI application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860", "--reload"]
+
+
