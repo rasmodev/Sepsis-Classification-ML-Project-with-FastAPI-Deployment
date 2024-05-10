@@ -24,6 +24,16 @@ After clicking on the link to the working FastAPI, click on "Try It Out", add th
 ### After Prediction
 ![App Screenshot](screenshots/pred_after_exec.png)
 
+## Streamlit Web Application Interface
+After clicking on the link to the Deployed Streamlit App on Hugging Face, provide inputs of the patient's medical details, and click on the **"Predict Sepsis"** button.
+
+### Before Prediction
+
+![App Screenshot](screenshots/Strealit_app_before_pred.png.png)
+
+### After Prediction
+![App Screenshot](screenshots/Streamlit_app_after_pred.png.png)
+
 # Repository Contents:
 - [Project Overview](#project-overview)
 - [Project Setup](#project-setup)
