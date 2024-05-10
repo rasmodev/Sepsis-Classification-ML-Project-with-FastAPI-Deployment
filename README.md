@@ -41,9 +41,11 @@ After clicking on the link to the working FastAPI, click on "Try It Out", add th
 # Project Overview:
 **i. Data Collection and Preprocessing:** I loaded and preprocessed a comprehensive dataset containing clinical and physiological data from patients to train and evaluate the sepsis classification model.
 
-**ii. Machine Learning Model:** I implemented a state-of-the-art machine learning model tailored for sepsis classification. This model has been fine-tuned to achieve high accuracy in detecting sepsis early, which is crucial for timely intervention.
+**ii. Machine Learning Model:** I implemented a machine learning model tailored for sepsis classification. This model has been fine-tuned to achieve high accuracy in detecting sepsis early, which is crucial for timely intervention.
 
-**iii. FAST API Integration:** I've seamlessly integrated the trained machine learning model into a web application using FAST API. This web application allows healthcare professionals to input patient data and receive instant predictions regarding sepsis risk.
+**iii. FAST API Integration:** I've seamlessly integrated the trained machine learning model into an API using FAST API. The API allows healthcare professionals to input patient data and receive instant predictions regarding sepsis risk.
+
+**iii. Streamlit Integration:** I also integrated the trained ML model into a web application using the Streamlit Framework. This web application allows healthcare professionals to input patient data and receive instant predictions regarding sepsis risk.
 
 **iv. Usage and Deployment:** In this README file, you will find detailed instructions on how to use and deploy this web application, making it user-friendly for both developers and healthcare practitioners.
 
