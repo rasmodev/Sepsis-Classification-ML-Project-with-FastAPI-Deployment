@@ -59,9 +59,9 @@ After clicking on the link to the Deployed Streamlit App on Hugging Face, provid
 
 **iii. FAST API Integration:** I've seamlessly integrated the trained machine learning model into an API using FAST API. The API allows healthcare professionals to input patient data and receive instant predictions regarding sepsis risk.
 
-**iii. Streamlit Integration:** I also integrated the trained ML model into a web application using the Streamlit Framework. This web application allows healthcare professionals to input patient data and receive instant predictions regarding sepsis risk.
+**iv. Streamlit Integration:** I also integrated the trained ML model into a web application using the Streamlit Framework. This web application allows healthcare professionals to input patient data and receive instant predictions regarding sepsis risk.
 
-**iv. Usage and Deployment:** In this README file, you will find detailed instructions on how to use and deploy this web application, making it user-friendly for both developers and healthcare practitioners.
+**v. Usage and Deployment:** In this README file, you will find detailed instructions on how to use and deploy this web application, making it user-friendly for both developers and healthcare practitioners.
 
 # Project Setup:
 To set up the project environment, follow these steps:
