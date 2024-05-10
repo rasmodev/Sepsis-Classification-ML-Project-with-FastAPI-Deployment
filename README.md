@@ -29,10 +29,10 @@ After clicking on the link to the Deployed Streamlit App on Hugging Face, provid
 
 ### Before Prediction
 
-![App Screenshot](screenshots/Strealit_app_before_pred.png.png)
+![App Screenshot](screenshots/Strealit_app_before_pred.png)
 
 ### After Prediction
-![App Screenshot](screenshots/Streamlit_app_after_pred.png.png)
+![App Screenshot](screenshots/streamlit_app_after_pred.png)
 
 # Repository Contents:
 - [Project Overview](#project-overview)
