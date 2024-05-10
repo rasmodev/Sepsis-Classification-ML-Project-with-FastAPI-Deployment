@@ -87,6 +87,39 @@ ii. Create a virtual environment and install the required dependencies:
   ```
 You can copy each command above and run them in your terminal to easily set up the project environment.
 
+## Project Structure
+Start by setting up a directory structure for the project. Here’s the structure I used:
+```bash
+├── Sepsis-Classification-ML-Project-with-FastAPI-Deployment (Project's Root Directory)
+
+    ├── venv (your virtual environment)
+    
+    ├── data (folder containing your datasets)
+    
+    ├── Sepsis_ML_Prediction_Deployment_With_FastAPI.ipynb (Jupyter Notebook containing your code and analysis)
+    
+    ├── model_and_key_components.pkl (your saved ML model and key components)
+    
+    ├── src
+    
+        ├── FastAPI
+        
+            ├── main.py (your FastAPI)
+            
+        ├── Streamlit_App
+        
+            ├── app.py (your Streamlit App)
+            
+    ├── Dockerfile (Your Dockerfile for containerizing the FastAPI with Docker)
+    
+    ├── build.sh (File with instructions for building the container and running it)
+    
+    ├── .gitignore
+    
+    └── requirements.txt
+```
+    
+
 ## Data Fields
 The data used in this project consists of a diverse collection of sepsis cases obtained from [Sepsis](https://www.kaggle.com/datasets/chaunguynnghunh/sepsis?select=README.md).
 
@@ -105,7 +138,6 @@ The data used in this project consists of a diverse collection of sepsis cases o
 | Sepsis      | Target          | Target variable - Positive: if a patient in ICU will develop sepsis,<br> Negative: otherwise |
 
 "ID" and "Insurance" are marked as "N/A" because they do not contribute to predicting whether a patient in the ICU will develop sepsis. These columns were excluded during feature selection because they did not provide relevant information for the sepsis prediction model.
-
 
 # Machine Learning Lifecycle
 I employed the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology in this project. 
@@ -149,7 +181,7 @@ Alternative Hypothesis (H1): There is a significant association between the pati
 
 
 ### Understanding the datasets
-I conducted an in-depth exploration of the datasets to gain insights into the available variables,their distributions and relationships, including:
+I conducted an in-depth exploration of the datasets to gain insights into the available variables, their distributions, and relationships, including:
 
 - i. Column Information of The Datasets using the .info method.
 
